@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teachers>
+	<teacher id="t001">
+		<nickname>东邪</nickname>
+		<name>黄药师</name>
+		<sex>男</sex>
+	</teacher>
+	<teacher id="t002">
+		<nickname>西狂</nickname>
+		<name>杨过</name>
+		<sex>男</sex>
+	</teacher>
+	<teacher id="t003">
+		<nickname>南僧</nickname>
+		<name>一灯</name>
+		<sex>男</sex>
+	</teacher>
+	<teacher id="t004">
+		<nickname>北侠</nickname>
+		<name>郭靖</name>
+		<sex>男</sex>
+	</teacher>
+	<teacher id="t005">
+		<nickname>中顽童</nickname>
+		<name>老顽童</name>
+		<sex>男</sex>
+	</teacher>
+</teachers>
+

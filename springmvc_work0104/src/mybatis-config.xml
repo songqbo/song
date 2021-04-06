@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--设置-->
+    <settings>
+        <!--打印sql语句(日志)-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--设置对懒加载的支持,提高性能，节省资源-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--使用延迟加载(懒加载)-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+
+    <!--    &lt;!&ndash;配置数据类型别名&ndash;&gt;
+    <typeAliases>
+        <typeAlias type="com.manong.com.manong.entity.User" alias="user"></typeAlias>
+    </typeAliases>
+    -->
+
+    <!--配置开发环境-->
+	 <environments default="oracleDev">
+         <!--配置每个环境-->
+         <environment id="oracleDev">
+             <!--配置事务管理器-->
+             <transactionManager type="JDBC"></transactionManager>
+             <!--配置数据源-->
+             <dataSource type="POOLED">
+                 <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+                 <property name="url" value="jdbc:oracle:thin:@localhost:1521/orcl"/>
+                 <property name="username" value="scott"/>
+                 <property name="password" value="tiger"/>
+             </dataSource>
+         </environment>
+     </environments>
+
+    <mappers>
+        <mapper resource="com/manong/mappers/GoodsMapper.xml"></mapper>
+        <mapper resource="com/manong/mappers/StudentsMapper.xml"></mapper>
+        <mapper resource="com/manong/mappers/UsersMapper.xml"></mapper>
+    </mappers>
+</configuration>

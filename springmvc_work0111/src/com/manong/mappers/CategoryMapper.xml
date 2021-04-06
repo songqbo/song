@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.manong.dao.ICategoryDao">
+
+    <resultMap id="queCate" type="com.manong.entity.WCategory">
+         <result property="cid" column="c_id"></result>
+         <result property="cname" column="c_name"></result>
+    </resultMap>
+</mapper>

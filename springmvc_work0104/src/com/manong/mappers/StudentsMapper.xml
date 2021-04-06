@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.manong.dao.IStudentsDao">
+
+    <resultMap id="queStu" type="com.manong.entity.Students">
+        <result property="sid" column="id"></result>
+        <result property="sname" column="name"></result>
+        <result property="ssex" column="sex"></result>
+        <result property="sage" column="age"></result>
+
+        <association property="goods" column="goodsId" select="com.manong.dao.IGoodsDao.queById"></association>
+    </resultMap>
+
+
+</mapper>

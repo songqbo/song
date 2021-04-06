@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.manong.dao.IGoodsDao">
+
+     <resultMap id="queGoods" type="com.manong.entity.Goods">
+         <result property="gid" column="id"></result>
+         <result property="gname" column="name"></result>
+         <result property="gaddress" column="address"></result>
+         <result property="gpeoples" column="peoples"></result>
+     </resultMap>
+</mapper>

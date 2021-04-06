@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+
+
+	<!--扫描包中注解，让其生效-->
+    <context:component-scan base-package="com.manong.*"></context:component-scan>
+
+	<!--开启springmvc默认的servlet,解决静态资源的问题-->
+	<mvc:default-servlet-handler></mvc:default-servlet-handler>
+
+	<!--开启springmvc的注解驱动,让失效的注解重新生效-->
+   <mvc:annotation-driven></mvc:annotation-driven>
+
+	<!--配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/page/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	<!--配置拦截器-->
+	<mvc:interceptors>
+		<!--验证用户是否登录的拦截器-->
+		<mvc:interceptor>
+			<mvc:mapping path="/*"/>
+			<bean class="com.manong.interceptor.checkLoginInt">
+				<!--注入不需要拦截的请求地址-->
+				<property name="notInterList">
+					<list>
+                      <value>/</value>
+					  <value>/toPage?page=login</value>
+					  <value>/login</value>
+					  <value>/tologin</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<!--配置文件解析器-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
+
+</beans>

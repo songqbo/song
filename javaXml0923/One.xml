@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employess>
+    <!--第一员工信息-->
+    <employe id="1001"  >
+         <ename>宋啟波</ename>
+         <eage>20</eage>
+         <eheight>176</eheight>
+         <esex>男</esex>
+    </employe>
+
+    <!--第二员工信息-->
+    <employe id="1002" >
+        <ename>郑树林</ename>
+        <eage>18</eage>
+        <eheight>175</eheight>
+        <esex>女</esex>
+    </employe>
+
+
+</employess>
